@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | DGT — Consultoría Tecnológica, Administrativa, Contable y Jurídica</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Fuentes de Google: Cormorant Garamond, Inter e IBM Plex Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f3ef;
+            color: #1f2328;
+        }
+        .font-editorial {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .font-mono-tech {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        .map-frame {
+            filter: grayscale(25%) contrast(98%);
+            transition: filter 0.3s ease;
+        }
+        .map-frame:hover {
+            filter: grayscale(0%) contrast(100%);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased selection:bg-[#1b3b36] selection:text-white">
+
+    <!-- CINTA SUPERIOR TÉCNICA -->
+    <div class="bg-[#1b3b36] text-[#e6ecea] py-2 text-[11px] font-mono-tech tracking-wider hidden md:block">
+        <div class="max-w-screen-xl mx-auto px-6 lg:px-10 flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#9ec5be]"></i>
+                Blvd. Nazario Ortiz Garza #2060 Int. 230-A, Los Lagos, Saltillo, Coahuila CP. 25253
+            </span>
+            <span class="flex items-center gap-2 font-medium text-white">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-[#9ec5be]"></i>
+                844 535 27 49
+            </span>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="w-full bg-[#f4f3ef]/95 backdrop-blur-sm border-b border-[#d6d3c9] sticky top-0 z-50">
+        <div class="max-w-screen-xl mx-auto px-6 lg:px-10 h-22 flex justify-between items-center py-4">
+
+            <!-- LOGO (Firma delgada gris integrada en retícula clara) -->
+            <a href="index.html" class="flex items-center shrink-0">
+                <img src="assets/logo.png" alt="Firma DGT" class="h-11 md:h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+            </a>
+
+            <!-- Enlaces de Escritorio -->
+            <div class="hidden md:flex gap-9 items-center">
+                <a href="index.html" class="font-mono-tech text-xs uppercase tracking-widest text-[#575d63] hover:text-[#1f2328] transition-colors">01. Inicio</a>
+                <a href="nosotros.html" class="font-mono-tech text-xs uppercase tracking-widest text-[#575d63] hover:text-[#1f2328] transition-colors">02. Nosotros</a>
+                <a href="servicios.html" class="font-mono-tech text-xs uppercase tracking-widest text-[#575d63] hover:text-[#1f2328] transition-colors">03. Servicios</a>
+                <a href="contacto.html" class="font-mono-tech text-xs uppercase tracking-widest bg-[#1b3b36] text-white px-5 py-2.5 border border-[#1b3b36]">04. Contacto</a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="btn-open-menu" class="md:hidden text-[#1f2328] focus:outline-none p-2" aria-label="Abrir menú">
+                <i data-lucide="menu" class="w-6 h-6 stroke-[1.5]"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MENÚ MÓVIL DESPLEGABLE -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#f4f3ef] z-[100] translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between p-8 md:hidden">
+        <div class="flex justify-between items-center border-b border-[#d6d3c9] pb-5">
+            <img src="assets/logo.png" alt="Firma DGT" class="h-11 w-auto object-contain">
+            <button id="btn-close-menu" class="text-[#1f2328] focus:outline-none p-2" aria-label="Cerrar menú">
+                <i data-lucide="x" class="w-7 h-7 stroke-[1.5]"></i>
+            </button>
+        </div>
+
+        <div class="flex flex-col divide-y divide-[#d6d3c9] my-auto border-y border-[#d6d3c9]">
+            <a href="index.html" class="mobile-link py-5 font-editorial text-3xl font-semibold text-[#1f2328] hover:text-[#1b3b36] transition-colors">01. Inicio</a>
+            <a href="nosotros.html" class="mobile-link py-5 font-editorial text-3xl font-semibold text-[#1f2328] hover:text-[#1b3b36] transition-colors">02. Nosotros</a>
+            <a href="servicios.html" class="mobile-link py-5 font-editorial text-3xl font-semibold text-[#1f2328] hover:text-[#1b3b36] transition-colors">03. Servicios</a>
+            <a href="contacto.html" class="mobile-link py-5 font-editorial text-3xl font-semibold text-[#1b3b36]">04. Contacto</a>
+        </div>
+
+        <div class="border-t border-[#d6d3c9] pt-5 text-xs font-mono-tech text-[#575d63] space-y-2">
+            <p class="flex items-center gap-2 text-[#1f2328]">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-[#1b3b36]"></i> 844 535 27 49
+            </p>
+            <p class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#1b3b36]"></i> Blvd. Nazario Ortiz Garza #2060 Int. 230-A, Saltillo
+            </p>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO DE CONTACTO -->
+    <header class="border-b border-[#d6d3c9] py-16 lg:py-24 px-6 lg:px-10">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-10 items-end">
+                <div class="lg:col-span-8 space-y-6">
+                    <p class="font-mono-tech text-xs uppercase tracking-[0.22em] text-[#1b3b36]">
+                        // 04 · ATENCIÓN DIRECTA Y UBICACIÓN
+                    </p>
+                    <h1 class="font-editorial text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1f2328] leading-[1.02]">
+                        Contacto institucional y <span class="italic font-normal text-[#1b3b36]">sede operativa</span>
+                    </h1>
+                </div>
+                <div class="lg:col-span-4 lg:border-l lg:border-[#d6d3c9] lg:pl-8">
+                    <p class="text-sm text-[#4a5056] leading-relaxed">
+                        Atendemos de manera directa vía telefónica y en nuestras oficinas en Saltillo, Coahuila, para coordinar sesiones de diagnóstico y consultoría empresarial.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- RETÍCULA DE INFORMACIÓN DE CONTACTO Y MAPA DE GOOGLE MAPS -->
+    <main class="py-16 lg:py-20 px-6 lg:px-10">
+        <div class="max-w-screen-xl mx-auto grid lg:grid-cols-12 gap-12 items-start">
+
+            <!-- COLUMNA IZQUIERDA: DATOS DE UBICACIÓN Y TELÉFONO -->
+            <div class="lg:col-span-5 divide-y divide-[#d6d3c9] border-t border-b border-[#d6d3c9]">
+
+                <!-- Teléfono Directo -->
+                <div class="py-7 space-y-3">
+                    <span class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36] flex items-center gap-2">
+                        <i data-lucide="phone" class="w-3.5 h-3.5"></i> 01 / Línea Telefónica Directa
+                    </span>
+                    <p class="font-editorial text-3xl sm:text-4xl font-bold text-[#1f2328]">
+                        844 535 27 49
+                    </p>
+                    <p class="text-sm text-[#4a5056] leading-relaxed">
+                        Canal directo para consultas iniciales, seguimiento de proyectos y programación de citas presenciales.
+                    </p>
+                    <div class="pt-2">
+                        <a href="tel:8445352749" class="inline-flex items-center gap-2 font-mono-tech text-xs uppercase tracking-wider bg-[#1b3b36] text-white px-5 py-3 hover:bg-[#132a26] transition-colors">
+                            <i data-lucide="phone-call" class="w-3.5 h-3.5"></i> Llamar Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dirección Física -->
+                <div class="py-7 space-y-3">
+                    <span class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36] flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 02 / Domicilio de Oficina
+                    </span>
+                    <address class="not-italic text-base text-[#1f2328] font-medium leading-relaxed">
+                        Blvd. Nazario Ortiz Garza #2060 Int. 230-A,<br>
+                        Col. Los Lagos, Saltillo, Coahuila<br>
+                        C.P. 25253
+                    </address>
+                    <div class="pt-2">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Blvd.+Nazario+Ortiz+Garza+2060,+Los+Lagos,+25253+Saltillo,+Coah." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-mono-tech text-xs uppercase tracking-wider border border-[#1f2328] text-[#1f2328] px-5 py-3 hover:bg-[#eae8e1] transition-colors">
+                            Abrir en Google Maps <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Áreas de Atención -->
+                <div class="py-7 space-y-3">
+                    <span class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36] flex items-center gap-2">
+                        <i data-lucide="briefcase" class="w-3.5 h-3.5"></i> 03 / Cobertura de Consultoría
+                    </span>
+                    <ul class="space-y-1.5 text-sm text-[#4a5056]">
+                        <li>· Computación y Tecnologías de la Información</li>
+                        <li>· Administración Empresarial</li>
+                        <li>· Contabilidad y Auditoría</li>
+                        <li>· Procesamiento Electrónico de Información</li>
+                        <li>· Hospedaje y Gestión de Plataformas Digitales</li>
+                        <li>· Servicios Jurídicos Empresariales</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- COLUMNA DERECHA: MAPA DE GOOGLE MAPS ENMARCADO -->
+            <div class="lg:col-span-7 space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#d6d3c9] pb-3">
+                    <span class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36]">
+                        Geolocalización · Saltillo, Coahuila
+                    </span>
+                    <span class="font-mono-tech text-[11px] text-[#6e757c]">
+                        BLVD. NAZARIO ORTIZ GARZA #2060 INT. 230-A
+                    </span>
+                </div>
+
+                <div class="border border-[#d6d3c9] bg-[#eae8e1] p-2">
+                    <div class="w-full h-[460px] lg:h-[540px] overflow-hidden">
+                        <iframe
+                            title="Ubicación de DGT en Blvd. Nazario Ortiz Garza 2060, Saltillo, Coahuila"
+                            class="w-full h-full border-0 map-frame"
+                            src="https://maps.google.com/maps?q=Blvd.%20Nazario%20Ortiz%20Garza%202060,%20Los%20Lagos,%2025253%20Saltillo,%20Coahuila&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <p class="font-mono-tech text-[11px] text-[#6e757c]">
+                    Referencia: Zona Norte · Blvd. Nazario Ortiz Garza #2060 Int. 230-A, Los Lagos, CP. 25253.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA SOBRIO -->
+    <footer class="bg-[#eae8e1] border-t border-[#d6d3c9] pt-14 pb-10 px-6 lg:px-10 text-[#3d4349]">
+        <div class="max-w-screen-xl mx-auto grid md:grid-cols-12 gap-10 pb-12 border-b border-[#d6d3c9]">
+
+            <div class="md:col-span-5 space-y-4">
+                <img src="assets/logo.png" alt="Firma DGT" class="h-8 w-auto object-contain opacity-90">
+                <p class="text-sm text-[#4a5056] leading-relaxed max-w-md">
+                    DGT ofrece soluciones integrales mediante la combinación de conocimientos técnicos, administrativos, financieros y jurídicos en Saltillo, Coahuila.
+                </p>
+            </div>
+
+            <div class="md:col-span-3 space-y-3">
+                <h4 class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36]">Secciones</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-[#1f2328] transition-colors">Inicio</a></li>
+                    <li><a href="nosotros.html" class="hover:text-[#1f2328] transition-colors">Nosotros</a></li>
+                    <li><a href="servicios.html" class="hover:text-[#1f2328] transition-colors">Servicios</a></li>
+                    <li><a href="contacto.html" class="hover:text-[#1f2328] transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-4 space-y-3">
+                <h4 class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36]">Oficina y Teléfono</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li class="flex items-start gap-2.5">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-[#1b3b36] shrink-0 mt-1"></i>
+                        <span>Blvd. Nazario Ortiz Garza #2060 Int. 230-A, Los Lagos, Saltillo, Coahuila CP. 25253</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i data-lucide="phone" class="w-4 h-4 text-[#1b3b36] shrink-0"></i>
+                        <span>844 535 27 49</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-screen-xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono-tech text-[#6e757c]">
+            <p>© 2026 DGT. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE MENÚ MÓVIL -->
+    <script>
+        lucide.createIcons();
+
+        const btnOpenMenu = document.getElementById('btn-open-menu');
+        const btnCloseMenu = document.getElementById('btn-close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btnOpenMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        };
+
+        btnCloseMenu.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    </script>
+</body>
+</html>

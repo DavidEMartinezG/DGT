@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | DGT — Consultoría Tecnológica, Administrativa, Contable y Jurídica</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Fuentes de Google: Cormorant Garamond, Inter e IBM Plex Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f3ef;
+            color: #1f2328;
+        }
+        .font-editorial {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .font-mono-tech {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        .hairline-row {
+            transition: background-color 0.25s ease, padding-left 0.25s ease;
+        }
+        .hairline-row:hover {
+            background-color: #eae8e1;
+            padding-left: 0.75rem;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased selection:bg-[#1b3b36] selection:text-white">
+
+    <!-- CINTA SUPERIOR TÉCNICA -->
+    <div class="bg-[#1b3b36] text-[#e6ecea] py-2 text-[11px] font-mono-tech tracking-wider hidden md:block">
+        <div class="max-w-screen-xl mx-auto px-6 lg:px-10 flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#9ec5be]"></i>
+                Blvd. Nazario Ortiz Garza #2060 Int. 230-A, Los Lagos, Saltillo, Coahuila CP. 25253
+            </span>
+            <span class="flex items-center gap-2 font-medium text-white">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-[#9ec5be]"></i>
+                844 535 27 49
+            </span>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="w-full bg-[#f4f3ef]/95 backdrop-blur-sm border-b border-[#d6d3c9] sticky top-0 z-50">
+        <div class="max-w-screen-xl mx-auto px-6 lg:px-10 h-22 flex justify-between items-center py-4">
+
+            <!-- LOGO (Firma delgada gris integrada en retícula clara) -->
+            <a href="index.html" class="flex items-center shrink-0">
+                <img src="assets/logo.png" alt="Firma DGT" class="h-11 md:h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+            </a>
+
+            <!-- Enlaces de Escritorio -->
+            <div class="hidden md:flex gap-9 items-center">
+                <a href="index.html" class="font-mono-tech text-xs uppercase tracking-widest text-[#575d63] hover:text-[#1f2328] transition-colors">01. Inicio</a>
+                <a href="nosotros.html" class="font-mono-tech text-xs uppercase tracking-widest text-[#575d63] hover:text-[#1f2328] transition-colors">02. Nosotros</a>
+                <a href="servicios.html" class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36] font-medium border-b border-[#1b3b36] pb-1">03. Servicios</a>
+                <a href="contacto.html" class="font-mono-tech text-xs uppercase tracking-widest bg-[#1b3b36] text-white px-5 py-2.5 hover:bg-[#132a26] transition-colors">04. Contacto</a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="btn-open-menu" class="md:hidden text-[#1f2328] focus:outline-none p-2" aria-label="Abrir menú">
+                <i data-lucide="menu" class="w-6 h-6 stroke-[1.5]"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MENÚ MÓVIL DESPLEGABLE -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#f4f3ef] z-[100] translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between p-8 md:hidden">
+        <div class="flex justify-between items-center border-b border-[#d6d3c9] pb-5">
+            <img src="assets/logo.png" alt="Firma DGT" class="h-11 w-auto object-contain">
+            <button id="btn-close-menu" class="text-[#1f2328] focus:outline-none p-2" aria-label="Cerrar menú">
+                <i data-lucide="x" class="w-7 h-7 stroke-[1.5]"></i>
+            </button>
+        </div>
+
+        <div class="flex flex-col divide-y divide-[#d6d3c9] my-auto border-y border-[#d6d3c9]">
+            <a href="index.html" class="mobile-link py-5 font-editorial text-3xl font-semibold text-[#1f2328] hover:text-[#1b3b36] transition-colors">01. Inicio</a>
+            <a href="nosotros.html" class="mobile-link py-5 font-editorial text-3xl font-semibold text-[#1f2328] hover:text-[#1b3b36] transition-colors">02. Nosotros</a>
+            <a href="servicios.html" class="mobile-link py-5 font-editorial text-3xl font-semibold text-[#1b3b36]">03. Servicios</a>
+            <a href="contacto.html" class="mobile-link py-5 font-editorial text-3xl font-semibold text-[#1f2328] hover:text-[#1b3b36] transition-colors">04. Contacto</a>
+        </div>
+
+        <div class="border-t border-[#d6d3c9] pt-5 text-xs font-mono-tech text-[#575d63] space-y-2">
+            <p class="flex items-center gap-2 text-[#1f2328]">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-[#1b3b36]"></i> 844 535 27 49
+            </p>
+            <p class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#1b3b36]"></i> Blvd. Nazario Ortiz Garza #2060 Int. 230-A, Saltillo
+            </p>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO EDITORIAL DE SERVICIOS -->
+    <header class="border-b border-[#d6d3c9] py-16 lg:py-24 px-6 lg:px-10">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-10 items-end border-b border-[#d6d3c9] pb-12">
+                <div class="lg:col-span-8 space-y-6">
+                    <p class="font-mono-tech text-xs uppercase tracking-[0.22em] text-[#1b3b36]">
+                        // 03 · CATÁLOGO DE SOLUCIONES PROFESIONALES
+                    </p>
+                    <h1 class="font-editorial text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1f2328] leading-[1.02]">
+                        Práctica especializada en <span class="italic font-normal text-[#1b3b36]">seis líneas operativas</span>
+                    </h1>
+                </div>
+                <div class="lg:col-span-4 lg:border-l lg:border-[#d6d3c9] lg:pl-8">
+                    <p class="text-sm text-[#4a5056] leading-relaxed">
+                        Cada línea de servicio responde a una dimensión crítica de la organización, operando de manera autónoma o integrada para asegurar continuidad, control y cumplimiento.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ÍNDICE DE NAVEGACIÓN RÁPIDA ENTRE ESPECIALIDADES -->
+            <div class="pt-8">
+                <span class="font-mono-tech text-[11px] uppercase tracking-widest text-[#6e757c] block mb-4">Índice de Especialidades</span>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 text-xs font-mono-tech">
+                    <a href="#servicio-01" class="py-2 border-b border-[#d6d3c9] flex justify-between items-center text-[#1f2328] hover:text-[#1b3b36] transition-colors">
+                        <span>01 / Computación y TI</span>
+                        <i data-lucide="arrow-down-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                    <a href="#servicio-02" class="py-2 border-b border-[#d6d3c9] flex justify-between items-center text-[#1f2328] hover:text-[#1b3b36] transition-colors">
+                        <span>02 / Administración Empresarial</span>
+                        <i data-lucide="arrow-down-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                    <a href="#servicio-03" class="py-2 border-b border-[#d6d3c9] flex justify-between items-center text-[#1f2328] hover:text-[#1b3b36] transition-colors">
+                        <span>03 / Contabilidad y Auditoría</span>
+                        <i data-lucide="arrow-down-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                    <a href="#servicio-04" class="py-2 border-b border-[#d6d3c9] flex justify-between items-center text-[#1f2328] hover:text-[#1b3b36] transition-colors">
+                        <span>04 / Procesamiento de Información</span>
+                        <i data-lucide="arrow-down-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                    <a href="#servicio-05" class="py-2 border-b border-[#d6d3c9] flex justify-between items-center text-[#1f2328] hover:text-[#1b3b36] transition-colors">
+                        <span>05 / Hospedaje y Plataformas</span>
+                        <i data-lucide="arrow-down-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                    <a href="#servicio-06" class="py-2 border-b border-[#d6d3c9] flex justify-between items-center text-[#1f2328] hover:text-[#1b3b36] transition-colors">
+                        <span>06 / Servicios Jurídicos</span>
+                        <i data-lucide="arrow-down-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- DESGLOSE TÉCNICO DE SERVICIOS -->
+    <main class="divide-y divide-[#d6d3c9]">
+
+        <!-- SERVICIO 01 -->
+        <section id="servicio-01" class="scroll-mt-24 py-16 lg:py-20 px-6 lg:px-10">
+            <div class="max-w-screen-xl mx-auto grid lg:grid-cols-12 gap-10">
+                <div class="lg:col-span-4 space-y-3">
+                    <span class="font-mono-tech text-xs text-[#1b3b36] block">LÍNEA 01 · TECNOLOGÍA</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-[#1f2328] leading-tight">
+                        Consultoría en Computación y Tecnologías de la Información
+                    </h2>
+                </div>
+                <div class="lg:col-span-8 lg:border-l lg:border-[#d6d3c9] lg:pl-12 space-y-6">
+                    <p class="text-base text-[#3d4349] leading-relaxed">
+                        Acompañamos a las organizaciones en la planeación, evaluación y modernización de su entorno tecnológico, alineando las herramientas de cómputo con los objetivos operativos y de transformación digital del negocio.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 pt-4 border-t border-[#d6d3c9] text-sm">
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">01.1 · Diagnóstico e Infraestructura</span>
+                            <p class="text-[#4a5056]">Evaluación de capacidades tecnológicas, arquitectura de sistemas y detección de cuellos de botella operativos.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">01.2 · Transformación Digital</span>
+                            <p class="text-[#4a5056]">Adopción ordenada de soluciones informáticas para automatizar tareas y elevar la productividad institucional.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">01.3 · Continuidad Operativa</span>
+                            <p class="text-[#4a5056]">Criterios técnicos para respaldar la disponibilidad, integridad y seguridad de los activos digitales.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">01.4 · Soporte Especializado</span>
+                            <p class="text-[#4a5056]">Asesoría continua para la selección, integración y mantenimiento evolutivo de herramientas de TI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIO 02 -->
+        <section id="servicio-02" class="scroll-mt-24 py-16 lg:py-20 px-6 lg:px-10">
+            <div class="max-w-screen-xl mx-auto grid lg:grid-cols-12 gap-10">
+                <div class="lg:col-span-4 space-y-3">
+                    <span class="font-mono-tech text-xs text-[#1b3b36] block">LÍNEA 02 · GESTIÓN</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-[#1f2328] leading-tight">
+                        Asesoría en Administración Empresarial
+                    </h2>
+                </div>
+                <div class="lg:col-span-8 lg:border-l lg:border-[#d6d3c9] lg:pl-12 space-y-6">
+                    <p class="text-base text-[#3d4349] leading-relaxed">
+                        Estructuramos modelos de gestión corporativa que permiten a la dirección ordenar sus operaciones internas, optimizar recursos y sostener el desarrollo institucional con indicadores claros.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 pt-4 border-t border-[#d6d3c9] text-sm">
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">02.1 · Optimización de Procesos</span>
+                            <p class="text-[#4a5056]">Mapeo, rediseño y estandarización de flujos administrativos para reducir tiempos y costos operativos.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">02.2 · Organización Corporativa</span>
+                            <p class="text-[#4a5056]">Definición de estructuras funcionales, políticas internas y mecanismos de coordinación entre áreas.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">02.3 · Planeación Operativa</span>
+                            <p class="text-[#4a5056]">Acompañamiento en la formulación de objetivos, presupuestos operativos y seguimiento de desempeño.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">02.4 · Fortalecimiento Directivo</span>
+                            <p class="text-[#4a5056]">Herramientas de control ejecutivo para respaldar la toma de decisiones en etapas de expansión o consolidación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIO 03 -->
+        <section id="servicio-03" class="scroll-mt-24 py-16 lg:py-20 px-6 lg:px-10">
+            <div class="max-w-screen-xl mx-auto grid lg:grid-cols-12 gap-10">
+                <div class="lg:col-span-4 space-y-3">
+                    <span class="font-mono-tech text-xs text-[#1b3b36] block">LÍNEA 03 · FINANZAS Y CONTROL</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-[#1f2328] leading-tight">
+                        Contabilidad y Auditoría
+                    </h2>
+                </div>
+                <div class="lg:col-span-8 lg:border-l lg:border-[#d6d3c9] lg:pl-12 space-y-6">
+                    <p class="text-base text-[#3d4349] leading-relaxed">
+                        Brindamos servicios contables y de auditoría orientados a garantizar la exactitud de la información financiera, el fortalecimiento del control interno y el cumplimiento puntual de las obligaciones aplicables.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 pt-4 border-t border-[#d6d3c9] text-sm">
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">03.1 · Contabilidad Corporativa</span>
+                            <p class="text-[#4a5056]">Registro sistemático, conciliaciones y emisión oportuna de estados financieros confiables.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">03.2 · Auditoría y Revisión</span>
+                            <p class="text-[#4a5056]">Verificación objetiva de registros, procedimientos y controles para prevenir desviaciones y riesgos.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">03.3 · Cumplimiento de Obligaciones</span>
+                            <p class="text-[#4a5056]">Seguimiento riguroso de requerimientos contables y fiscales conforme al marco normativo vigente.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">03.4 · Control Interno</span>
+                            <p class="text-[#4a5056]">Diseño e implementación de salvaguardas administrativas y financieras para proteger el patrimonio empresarial.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIO 04 -->
+        <section id="servicio-04" class="scroll-mt-24 py-16 lg:py-20 px-6 lg:px-10">
+            <div class="max-w-screen-xl mx-auto grid lg:grid-cols-12 gap-10">
+                <div class="lg:col-span-4 space-y-3">
+                    <span class="font-mono-tech text-xs text-[#1b3b36] block">LÍNEA 04 · DATOS</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-[#1f2328] leading-tight">
+                        Procesamiento Electrónico de Información
+                    </h2>
+                </div>
+                <div class="lg:col-span-8 lg:border-l lg:border-[#d6d3c9] lg:pl-12 space-y-6">
+                    <p class="text-base text-[#3d4349] leading-relaxed">
+                        Ejecutamos procesos estructurados de captura, validación, organización y explotación de datos empresariales para transformar volúmenes de información operativa en insumos precisos para la gestión.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 pt-4 border-t border-[#d6d3c9] text-sm">
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">04.1 · Estructuración y Depuración</span>
+                            <p class="text-[#4a5056]">Normalización de bases de datos y registros electrónicos para eliminar inconsistencias y duplicidades.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">04.2 · Flujos Automatizados</span>
+                            <p class="text-[#4a5056]">Procesamiento periódico de información administrativa, operativa y financiera con trazabilidad verificable.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">04.3 · Integridad y Resguardo</span>
+                            <p class="text-[#4a5056]">Protocolos ordenados para la conservación, clasificación y disponibilidad segura de archivos digitales.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">04.4 · Reporteo Ejecutivo</span>
+                            <p class="text-[#4a5056]">Consolidación de indicadores clave para facilitar el análisis directivo y la auditoría documental.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIO 05 -->
+        <section id="servicio-05" class="scroll-mt-24 py-16 lg:py-20 px-6 lg:px-10">
+            <div class="max-w-screen-xl mx-auto grid lg:grid-cols-12 gap-10">
+                <div class="lg:col-span-4 space-y-3">
+                    <span class="font-mono-tech text-xs text-[#1b3b36] block">LÍNEA 05 · INFRAESTRUCTURA DIGITAL</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-[#1f2328] leading-tight">
+                        Hospedaje y Gestión de Plataformas Digitales
+                    </h2>
+                </div>
+                <div class="lg:col-span-8 lg:border-l lg:border-[#d6d3c9] lg:pl-12 space-y-6">
+                    <p class="text-base text-[#3d4349] leading-relaxed">
+                        Proveemos servicios especializados de alojamiento y administración técnica de plataformas digitales, asegurando entornos estables, monitoreados y disponibles para la operación continua de nuestros clientes.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 pt-4 border-t border-[#d6d3c9] text-sm">
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">05.1 · Hospedaje Administrado</span>
+                            <p class="text-[#4a5056]">Alojamiento de aplicaciones, portales y sistemas empresariales bajo parámetros de estabilidad y rendimiento.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">05.2 · Operación y Mantenimiento</span>
+                            <p class="text-[#4a5056]">Administración técnica, actualizaciones programadas y supervisión continua de entornos digitales.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">05.3 · Respaldo y Recuperación</span>
+                            <p class="text-[#4a5056]">Esquemas periódicos de copias de seguridad para garantizar la continuidad ante cualquier contingencia.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">05.4 · Escalabilidad Operativa</span>
+                            <p class="text-[#4a5056]">Adecuación de capacidades conforme al crecimiento de usuarios, transacciones y demanda de procesamiento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIO 06 -->
+        <section id="servicio-06" class="scroll-mt-24 py-16 lg:py-20 px-6 lg:px-10">
+            <div class="max-w-screen-xl mx-auto grid lg:grid-cols-12 gap-10">
+                <div class="lg:col-span-4 space-y-3">
+                    <span class="font-mono-tech text-xs text-[#1b3b36] block">LÍNEA 06 · MARCO LEGAL</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-[#1f2328] leading-tight">
+                        Servicios Jurídicos Empresariales
+                    </h2>
+                </div>
+                <div class="lg:col-span-8 lg:border-l lg:border-[#d6d3c9] lg:pl-12 space-y-6">
+                    <p class="text-base text-[#3d4349] leading-relaxed">
+                        Ofrecemos apoyo y asesoramiento legal en materia empresarial para complementar de forma orgánica nuestras soluciones administrativas, tecnológicas y financieras, brindando certidumbre normativa en cada operación.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 pt-4 border-t border-[#d6d3c9] text-sm">
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">06.1 · Asesoría Corporativa</span>
+                            <p class="text-[#4a5056]">Acompañamiento jurídico en la estructura societaria, gobierno interno y actos corporativos de la empresa.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">06.2 · Instrumentación Contractual</span>
+                            <p class="text-[#4a5056]">Elaboración, revisión y negociación de contratos comerciales, tecnológicos y de prestación de servicios.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">06.3 · Cumplimiento Normativo</span>
+                            <p class="text-[#4a5056]">Prevención de contingencias legales mediante la alineación de procesos internos con las disposiciones aplicables.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="font-mono-tech text-[11px] uppercase text-[#1b3b36]">06.4 · Respaldo Multidisciplinario</span>
+                            <p class="text-[#4a5056]">Coordinación directa con nuestras áreas contable y tecnológica para decisiones empresariales integrales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- BLOQUE DE INTEGRACIÓN Y LLAMADO A CONTACTO -->
+    <section class="border-t border-[#d6d3c9] py-16 px-6 lg:px-10 bg-[#eae8e1]/50">
+        <div class="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div class="space-y-2 max-w-2xl">
+                <span class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36]">Atención Personalizada</span>
+                <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-[#1f2328]">
+                    Configuremos un esquema de consultoría acorde a las necesidades de su organización
+                </h2>
+            </div>
+            <div class="flex flex-wrap items-center gap-4 shrink-0">
+                <a href="contacto.html" class="font-mono-tech text-xs uppercase tracking-wider bg-[#1b3b36] text-white px-6 py-3.5 hover:bg-[#132a26] transition-colors">
+                    Solicitar Consulta
+                </a>
+                <a href="tel:8445352749" class="font-mono-tech text-xs uppercase tracking-wider border border-[#1f2328] text-[#1f2328] px-6 py-3.5 hover:bg-[#eae8e1] transition-colors inline-flex items-center gap-2">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-[#1b3b36]"></i> 844 535 27 49
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA SOBRIO -->
+    <footer class="bg-[#eae8e1] border-t border-[#d6d3c9] pt-14 pb-10 px-6 lg:px-10 text-[#3d4349]">
+        <div class="max-w-screen-xl mx-auto grid md:grid-cols-12 gap-10 pb-12 border-b border-[#d6d3c9]">
+
+            <div class="md:col-span-5 space-y-4">
+                <img src="assets/logo.png" alt="Firma DGT" class="h-8 w-auto object-contain opacity-90">
+                <p class="text-sm text-[#4a5056] leading-relaxed max-w-md">
+                    DGT ofrece soluciones integrales mediante la combinación de conocimientos técnicos, administrativos, financieros y jurídicos en Saltillo, Coahuila.
+                </p>
+            </div>
+
+            <div class="md:col-span-3 space-y-3">
+                <h4 class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36]">Secciones</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-[#1f2328] transition-colors">Inicio</a></li>
+                    <li><a href="nosotros.html" class="hover:text-[#1f2328] transition-colors">Nosotros</a></li>
+                    <li><a href="servicios.html" class="hover:text-[#1f2328] transition-colors">Servicios</a></li>
+                    <li><a href="contacto.html" class="hover:text-[#1f2328] transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-4 space-y-3">
+                <h4 class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36]">Oficina y Teléfono</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li class="flex items-start gap-2.5">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-[#1b3b36] shrink-0 mt-1"></i>
+                        <span>Blvd. Nazario Ortiz Garza #2060 Int. 230-A, Los Lagos, Saltillo, Coahuila CP. 25253</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i data-lucide="phone" class="w-4 h-4 text-[#1b3b36] shrink-0"></i>
+                        <span>844 535 27 49</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-screen-xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono-tech text-[#6e757c]">
+            <p>© 2026 DGT. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE MENÚ MÓVIL -->
+    <script>
+        lucide.createIcons();
+
+        const btnOpenMenu = document.getElementById('btn-open-menu');
+        const btnCloseMenu = document.getElementById('btn-close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btnOpenMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        };
+
+        btnCloseMenu.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    </script>
+</body>
+</html>

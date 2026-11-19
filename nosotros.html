@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | DGT — Consultoría Tecnológica, Administrativa, Contable y Jurídica</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Fuentes de Google: Cormorant Garamond, Inter e IBM Plex Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f3ef;
+            color: #1f2328;
+        }
+        .font-editorial {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .font-mono-tech {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        .hairline-row {
+            transition: background-color 0.25s ease, padding-left 0.25s ease;
+        }
+        .hairline-row:hover {
+            background-color: #eae8e1;
+            padding-left: 0.75rem;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased selection:bg-[#1b3b36] selection:text-white">
+
+    <!-- CINTA SUPERIOR TÉCNICA -->
+    <div class="bg-[#1b3b36] text-[#e6ecea] py-2 text-[11px] font-mono-tech tracking-wider hidden md:block">
+        <div class="max-w-screen-xl mx-auto px-6 lg:px-10 flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#9ec5be]"></i>
+                Blvd. Nazario Ortiz Garza #2060 Int. 230-A, Los Lagos, Saltillo, Coahuila CP. 25253
+            </span>
+            <span class="flex items-center gap-2 font-medium text-white">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-[#9ec5be]"></i>
+                844 535 27 49
+            </span>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="w-full bg-[#f4f3ef]/95 backdrop-blur-sm border-b border-[#d6d3c9] sticky top-0 z-50">
+        <div class="max-w-screen-xl mx-auto px-6 lg:px-10 h-22 flex justify-between items-center py-4">
+
+            <!-- LOGO (Firma delgada gris integrada en retícula clara) -->
+            <a href="index.html" class="flex items-center shrink-0">
+                <img src="assets/logo.png" alt="Firma DGT" class="h-11 md:h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+            </a>
+
+            <!-- Enlaces de Escritorio -->
+            <div class="hidden md:flex gap-9 items-center">
+                <a href="index.html" class="font-mono-tech text-xs uppercase tracking-widest text-[#575d63] hover:text-[#1f2328] transition-colors">01. Inicio</a>
+                <a href="nosotros.html" class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36] font-medium border-b border-[#1b3b36] pb-1">02. Nosotros</a>
+                <a href="servicios.html" class="font-mono-tech text-xs uppercase tracking-widest text-[#575d63] hover:text-[#1f2328] transition-colors">03. Servicios</a>
+                <a href="contacto.html" class="font-mono-tech text-xs uppercase tracking-widest bg-[#1b3b36] text-white px-5 py-2.5 hover:bg-[#132a26] transition-colors">04. Contacto</a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="btn-open-menu" class="md:hidden text-[#1f2328] focus:outline-none p-2" aria-label="Abrir menú">
+                <i data-lucide="menu" class="w-6 h-6 stroke-[1.5]"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MENÚ MÓVIL DESPLEGABLE -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#f4f3ef] z-[100] translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between p-8 md:hidden">
+        <div class="flex justify-between items-center border-b border-[#d6d3c9] pb-5">
+            <img src="assets/logo.png" alt="Firma DGT" class="h-11 w-auto object-contain">
+            <button id="btn-close-menu" class="text-[#1f2328] focus:outline-none p-2" aria-label="Cerrar menú">
+                <i data-lucide="x" class="w-7 h-7 stroke-[1.5]"></i>
+            </button>
+        </div>
+
+        <div class="flex flex-col divide-y divide-[#d6d3c9] my-auto border-y border-[#d6d3c9]">
+            <a href="index.html" class="mobile-link py-5 font-editorial text-3xl font-semibold text-[#1f2328] hover:text-[#1b3b36] transition-colors">01. Inicio</a>
+            <a href="nosotros.html" class="mobile-link py-5 font-editorial text-3xl font-semibold text-[#1b3b36]">02. Nosotros</a>
+            <a href="servicios.html" class="mobile-link py-5 font-editorial text-3xl font-semibold text-[#1f2328] hover:text-[#1b3b36] transition-colors">03. Servicios</a>
+            <a href="contacto.html" class="mobile-link py-5 font-editorial text-3xl font-semibold text-[#1f2328] hover:text-[#1b3b36] transition-colors">04. Contacto</a>
+        </div>
+
+        <div class="border-t border-[#d6d3c9] pt-5 text-xs font-mono-tech text-[#575d63] space-y-2">
+            <p class="flex items-center gap-2 text-[#1f2328]">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-[#1b3b36]"></i> 844 535 27 49
+            </p>
+            <p class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#1b3b36]"></i> Blvd. Nazario Ortiz Garza #2060 Int. 230-A, Saltillo
+            </p>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO DE PÁGINA: IDENTIDAD Y PERFIL INSTITUCIONAL -->
+    <header class="border-b border-[#d6d3c9] py-16 lg:py-24 px-6 lg:px-10">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-10 items-end border-b border-[#d6d3c9] pb-12">
+                <div class="lg:col-span-8 space-y-6">
+                    <p class="font-mono-tech text-xs uppercase tracking-[0.22em] text-[#1b3b36]">
+                        // 02 · IDENTIDAD INSTITUCIONAL
+                    </p>
+                    <h1 class="font-editorial text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1f2328] leading-[1.02]">
+                        Una firma concebida para la <span class="italic font-normal text-[#1b3b36]">convergencia operativa</span>
+                    </h1>
+                </div>
+                <div class="lg:col-span-4 lg:border-l lg:border-[#d6d3c9] lg:pl-8">
+                    <p class="text-sm text-[#4a5056] leading-relaxed">
+                        Con sede en Saltillo, Coahuila, DGT articula disciplinas técnicas, administrativas, contables y jurídicas para atender las necesidades reales de gestión de las organizaciones modernas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Síntesis de Propósito -->
+            <div class="pt-10 grid lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-3">
+                    <span class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36]">Propósito Central</span>
+                </div>
+                <div class="lg:col-span-9">
+                    <p class="font-editorial text-2xl sm:text-3xl text-[#1f2328] leading-snug">
+                        “Proporcionar soluciones empresariales integrales mediante la combinación de conocimientos técnicos, administrativos, financieros y jurídicos, contribuyendo a la optimización de procesos, la transformación digital, el cumplimiento de obligaciones y el fortalecimiento de la gestión corporativa.”
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- QUIÉNES SOMOS Y ENFOQUE MULTIDISCIPLINARIO -->
+    <section class="py-20 px-6 lg:px-10 border-b border-[#d6d3c9]">
+        <div class="max-w-screen-xl mx-auto grid lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-4 space-y-4">
+                <span class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36] block">Naturaleza de la Firma</span>
+                <h2 class="font-editorial text-4xl font-bold text-[#1f2328] leading-tight">
+                    Visión integral frente a retos complejos
+                </h2>
+                <p class="font-mono-tech text-xs text-[#6e757c] pt-2">
+                    DGT · SALTILLO, COAHUILA
+                </p>
+            </div>
+
+            <div class="lg:col-span-8 space-y-6 text-[#3d4349] text-base leading-relaxed lg:border-l lg:border-[#d6d3c9] lg:pl-12">
+                <p>
+                    DGT es una empresa multidisciplinaria dedicada a la prestación de servicios profesionales de consultoría tecnológica, administrativa, contable y jurídica, enfocada en ofrecer soluciones integrales que contribuyan al desarrollo, fortalecimiento y eficiencia operativa de las organizaciones.
+                </p>
+                <p>
+                    Sus actividades comprenden servicios especializados de consultoría en computación y tecnologías de la información, asesoría en administración empresarial, contabilidad y auditoría, así como procesamiento electrónico de información y servicios relacionados con el hospedaje y gestión de plataformas digitales.
+                </p>
+                <p>
+                    Asimismo, la empresa contempla la prestación de servicios jurídicos orientados a brindar apoyo y asesoramiento legal en materia empresarial, complementando su oferta de servicios profesionales para atender de manera articulada las necesidades administrativas, tecnológicas, financieras y legales de cada cliente.
+                </p>
+
+                <!-- Indicadores de Arquitectura de Servicio -->
+                <div class="grid sm:grid-cols-2 gap-6 pt-6 border-t border-[#d6d3c9]">
+                    <div>
+                        <span class="font-mono-tech text-xs text-[#1b3b36] block mb-1">ARQUITECTURA DE RESPUESTA</span>
+                        <p class="text-sm text-[#4a5056]">Alineación directa entre infraestructura tecnológica, control contable y seguridad jurídica.</p>
+                    </div>
+                    <div>
+                        <span class="font-mono-tech text-xs text-[#1b3b36] block mb-1">CRITERIO DE EJECUCIÓN</span>
+                        <p class="text-sm text-[#4a5056]">Diagnóstico preciso y acompañamiento continuo orientado a la continuidad y solidez operativa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUATRO PILARES DE INTEGRACIÓN -->
+    <section class="py-20 px-6 lg:px-10 border-b border-[#d6d3c9]">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="mb-12">
+                <span class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36] block mb-2">Fundamentos de Práctica</span>
+                <h2 class="font-editorial text-4xl font-bold text-[#1f2328]">Los cuatro ejes que sostienen nuestra asesoría</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 border-t border-l border-[#d6d3c9]">
+                <!-- Pilar 01 -->
+                <div class="p-8 lg:p-10 border-r border-b border-[#d6d3c9] space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono-tech text-xs text-[#1b3b36]">EJE 01 / TECNOLOGÍA E INFORMACIÓN</span>
+                        <i data-lucide="cpu" class="w-4 h-4 text-[#1b3b36] stroke-[1.5]"></i>
+                    </div>
+                    <h3 class="font-editorial text-2xl font-bold text-[#1f2328]">Rigor Técnico y Digital</h3>
+                    <p class="text-sm text-[#4a5056] leading-relaxed">
+                        Consultoría en computación, procesamiento electrónico de información y gestión de plataformas digitales diseñadas para dar soporte estable y escalable a la operación diaria.
+                    </p>
+                </div>
+
+                <!-- Pilar 02 -->
+                <div class="p-8 lg:p-10 border-r border-b border-[#d6d3c9] space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono-tech text-xs text-[#1b3b36]">EJE 02 / GESTIÓN EMPRESARIAL</span>
+                        <i data-lucide="layers" class="w-4 h-4 text-[#1b3b36] stroke-[1.5]"></i>
+                    </div>
+                    <h3 class="font-editorial text-2xl font-bold text-[#1f2328]">Estructura Administrativa</h3>
+                    <p class="text-sm text-[#4a5056] leading-relaxed">
+                        Asesoría en administración empresarial enfocada en ordenar flujos internos, optimizar procesos y fortalecer la capacidad ejecutiva de la organización.
+                    </p>
+                </div>
+
+                <!-- Pilar 03 -->
+                <div class="p-8 lg:p-10 border-r border-b border-[#d6d3c9] space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono-tech text-xs text-[#1b3b36]">EJE 03 / FINANZAS Y CONTROL</span>
+                        <i data-lucide="scale" class="w-4 h-4 text-[#1b3b36] stroke-[1.5]"></i>
+                    </div>
+                    <h3 class="font-editorial text-2xl font-bold text-[#1f2328]">Precisión Contable y Auditoría</h3>
+                    <p class="text-sm text-[#4a5056] leading-relaxed">
+                        Práctica contable y de auditoría orientada a garantizar trazabilidad financiera, transparencia operativa y cumplimiento puntual de las obligaciones aplicables.
+                    </p>
+                </div>
+
+                <!-- Pilar 04 -->
+                <div class="p-8 lg:p-10 border-r border-b border-[#d6d3c9] space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono-tech text-xs text-[#1b3b36]">EJE 04 / RESPALDO NORMATIVO</span>
+                        <i data-lucide="shield-check" class="w-4 h-4 text-[#1b3b36] stroke-[1.5]"></i>
+                    </div>
+                    <h3 class="font-editorial text-2xl font-bold text-[#1f2328]">Certeza Jurídica Empresarial</h3>
+                    <p class="text-sm text-[#4a5056] leading-relaxed">
+                        Asesoramiento legal corporativo que complementa y protege cada decisión administrativa, tecnológica y financiera dentro del marco normativo vigente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METODOLOGÍA DE INTERVENCIÓN -->
+    <section class="py-20 px-6 lg:px-10 border-b border-[#d6d3c9]">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-10">
+                <div>
+                    <span class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36] block mb-2">Método de Trabajo</span>
+                    <h2 class="font-editorial text-4xl font-bold text-[#1f2328]">Secuencia de Acompañamiento</h2>
+                </div>
+                <span class="font-mono-tech text-xs text-[#6e757c]">PROCESO ESTRUCTURADO EN 4 FASES</span>
+            </div>
+
+            <div class="border-t border-[#d6d3c9] divide-y divide-[#d6d3c9]">
+                <div class="hairline-row py-6 grid md:grid-cols-12 gap-4 items-baseline">
+                    <span class="md:col-span-2 font-mono-tech text-xs text-[#1b3b36]">FASE 01</span>
+                    <h3 class="md:col-span-4 font-editorial text-2xl font-bold text-[#1f2328]">Diagnóstico Multidisciplinario</h3>
+                    <p class="md:col-span-6 text-sm text-[#4a5056]">Evaluación conjunta del estado operativo, tecnológico, contable y jurídico de la organización para detectar áreas de mejora y riesgos.</p>
+                </div>
+
+                <div class="hairline-row py-6 grid md:grid-cols-12 gap-4 items-baseline">
+                    <span class="md:col-span-2 font-mono-tech text-xs text-[#1b3b36]">FASE 02</span>
+                    <h3 class="md:col-span-4 font-editorial text-2xl font-bold text-[#1f2328]">Diseño de Solución Integral</h3>
+                    <p class="md:col-span-6 text-sm text-[#4a5056]">Estructuración de un plan de acción coherente que armoniza procesos administrativos, herramientas digitales y cumplimiento normativo.</p>
+                </div>
+
+                <div class="hairline-row py-6 grid md:grid-cols-12 gap-4 items-baseline">
+                    <span class="md:col-span-2 font-mono-tech text-xs text-[#1b3b36]">FASE 03</span>
+                    <h3 class="md:col-span-4 font-editorial text-2xl font-bold text-[#1f2328]">Implementación y Procesamiento</h3>
+                    <p class="md:col-span-6 text-sm text-[#4a5056]">Ejecución ordenada de sistemas, gestión de plataformas, registros contables y formalización jurídica con mínima fricción operativa.</p>
+                </div>
+
+                <div class="hairline-row py-6 grid md:grid-cols-12 gap-4 items-baseline">
+                    <span class="md:col-span-2 font-mono-tech text-xs text-[#1b3b36]">FASE 04</span>
+                    <h3 class="md:col-span-4 font-editorial text-2xl font-bold text-[#1f2328]">Auditoría y Mejora Continua</h3>
+                    <p class="md:col-span-6 text-sm text-[#4a5056]">Seguimiento periódico, verificación de cumplimiento y ajustes estratégicos para sostener la eficiencia y el crecimiento corporativo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CIERRE EDITORIAL / CONEXIÓN CON SERVICIOS Y CONTACTO -->
+    <section class="py-16 px-6 lg:px-10">
+        <div class="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div class="space-y-2 max-w-2xl">
+                <span class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36]">Siguiente Paso</span>
+                <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-[#1f2328]">
+                    Conozca el detalle de nuestras líneas de consultoría o agende una conversación directa
+                </h2>
+            </div>
+            <div class="flex flex-wrap gap-3 shrink-0">
+                <a href="servicios.html" class="font-mono-tech text-xs uppercase tracking-wider bg-[#1b3b36] text-white px-6 py-3.5 hover:bg-[#132a26] transition-colors">
+                    Explorar Servicios
+                </a>
+                <a href="contacto.html" class="font-mono-tech text-xs uppercase tracking-wider border border-[#1f2328] text-[#1f2328] px-6 py-3.5 hover:bg-[#eae8e1] transition-colors">
+                    Contactar Oficina
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA SOBRIO -->
+    <footer class="bg-[#eae8e1] border-t border-[#d6d3c9] pt-14 pb-10 px-6 lg:px-10 text-[#3d4349]">
+        <div class="max-w-screen-xl mx-auto grid md:grid-cols-12 gap-10 pb-12 border-b border-[#d6d3c9]">
+
+            <div class="md:col-span-5 space-y-4">
+                <img src="assets/logo.png" alt="Firma DGT" class="h-8 w-auto object-contain opacity-90">
+                <p class="text-sm text-[#4a5056] leading-relaxed max-w-md">
+                    DGT ofrece soluciones integrales mediante la combinación de conocimientos técnicos, administrativos, financieros y jurídicos en Saltillo, Coahuila.
+                </p>
+            </div>
+
+            <div class="md:col-span-3 space-y-3">
+                <h4 class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36]">Secciones</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-[#1f2328] transition-colors">Inicio</a></li>
+                    <li><a href="nosotros.html" class="hover:text-[#1f2328] transition-colors">Nosotros</a></li>
+                    <li><a href="servicios.html" class="hover:text-[#1f2328] transition-colors">Servicios</a></li>
+                    <li><a href="contacto.html" class="hover:text-[#1f2328] transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-4 space-y-3">
+                <h4 class="font-mono-tech text-xs uppercase tracking-widest text-[#1b3b36]">Oficina y Teléfono</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li class="flex items-start gap-2.5">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-[#1b3b36] shrink-0 mt-1"></i>
+                        <span>Blvd. Nazario Ortiz Garza #2060 Int. 230-A, Los Lagos, Saltillo, Coahuila CP. 25253</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i data-lucide="phone" class="w-4 h-4 text-[#1b3b36] shrink-0"></i>
+                        <span>844 535 27 49</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-screen-xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono-tech text-[#6e757c]">
+            <p>© 2026 DGT. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE MENÚ MÓVIL -->
+    <script>
+        lucide.createIcons();
+
+        const btnOpenMenu = document.getElementById('btn-open-menu');
+        const btnCloseMenu = document.getElementById('btn-close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btnOpenMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        };
+
+        btnCloseMenu.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    </script>
+</body>
+</html>
